@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIN Verification</title>
+    <script>
+        var actualPIN = "4545";
+        var attempts = 3;
+
+        function submitPIN() {
+            var inputPIN = document.getElementById("pin-input").value;
+            if (inputPIN === actualPIN) {
+                document.getElementById("message").innerHTML = "PIN correct. Access granted!";
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    document.getElementById("message").innerHTML = "Wrong PIN. " + attempts + " attempts left.";
+                } else {
+                    document.getElementById("message").innerHTML = "Maximum attempts reached. Access denied!";
+                    document.getElementById("pin-input").disabled = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="pin-screen">
+        <h2>PIN Verification</h2>
+        <label for="pin-input">Enter PIN :</label>
+        <input type="password" id="pin-input" maxlength="4" size="4"> 
+        <button onclick="submitPIN()">Submit</button>
+        <p id="message"></p>
+    </div>
+</body>
+</html>

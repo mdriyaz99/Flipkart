@@ -1,0 +1,28 @@
+
+[
+    {
+        "Name": "Apple Iphone (Black) 128 GB",
+        "Price": 70999,
+        "Image": "../public/images/iphone-black.jpg"
+    },
+    {
+        "Name": "Apple Iphone (Green) 256 GB",
+        "Price": 79999,
+        "Image": "../public/images/iphone-green.jpg" 
+    },
+    {
+        "Name": "Apple Iphone (Blue) 128 GB",
+        "Price": 70999,
+        "Image": "../public/images/iphone-blue.jpg" 
+    },
+    {
+        "Name": "Apple Iphone (Pink) 128 GB",
+        "Price": 70999,
+        "Image": "../public/images/iphone-pink.jpg" 
+    },
+    {
+        "Name": "Apple Iphone (Yellow) 128 GB",
+        "Price": 70999,
+        "Image": "../public/images/iphone-Yellow.jpg" 
+    }
+]

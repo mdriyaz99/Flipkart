@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    <style>
+        .round-meter{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            border-left: 4px solid green;
+            border-right: 4px solid green;
+            border-bottom: 4px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Select Product</legend>
+            <div>
+                <select name="product" size="3" multiple>
+                    <option>All</option>
+                    <optgroup label="Electronics">
+                        <option value="ELETV">Television</option>
+                        <option value="ELEMOB" disabled>Mobiles</option>
+                    </optgroup>
+                    <optgroup label="Footwear">
+                        <option selected>Boots</option>
+                        <option >Sneakers</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+            <button>Submit</button>
+        </fieldset>
+        <fieldset>
+            <legend>Your Comments</legend>
+            <textarea name="" cols="30" rows="10"></textarea>
+            <br><br>
+            <label>Terms of Services</label>
+            <br>
+            <textarea cols="30" rows="10" readonly>Please read and accept our terms of service.</textarea>
+            <br>
+            <button>Submit</button>
+        </fieldset>
+        <div class="round-meter"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt 2</title>
+    <script>
+        function AddClick(){
+            folderName = prompt("Enter New Folder Name" , "New Folder")
+            if(folderName==""){
+                alert("Folder Name Is Required");
+            } else if(folderName==null){
+                alert("Cancelled..");
+            }else{
+                document.querySelector("p").innerHTML += "folder created :" + folderName +"<br>"; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()" >New Folder</button>
+    <p></p>
+</body>
+</html>

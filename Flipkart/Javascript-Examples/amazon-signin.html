@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var flag;
+        function ToggleContainers(){
+            document.getElementById("PwdContainer").style.display = "block";
+            document.getElementById("IdContainer").style.display = "none";
+        }
+        function ContinueClick(){
+            var userId = document.getElementById("UserId").value;
+            fetch("../data/users-amazon.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(user){
+                if(user.Email===userId){
+                    flag = `Login success with your email ${userId} - Please Click Activation Link`;
+                    ToggleContainers();
+                }
+                else if(user.Mobile===userId){
+                    flag = `Login Success with Mobile ${userId} - OTP Sent`;
+                    ToggleContainers();
+                }
+                else {
+                    document.getElementById("UserError").innerHTML = `${userId} Not Found`.fontcolor('red');
+                }
+            })
+        }
+
+        function LoginClick(){
+            var pwd = document.getElementById("Password").value;
+            fetch("../data/users-amazon.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(user){
+                if(user.Password===pwd){
+                    document.write(`<h2>${flag}</h2>`);
+                } else {
+                    document.getElementById("PwdError").innerHTML = "Invalid Password".fontcolor('red');
+                }
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <div style="width: 350px;" class="border border-1 p-4">
+            <h1>Signin</h1>
+            <div id="IdContainer">
+                <label class="form-label fw-bold"> Email or Mobile Phone Number</label>
+                <div>
+                    <input type="text" id="UserId" class="form-control">
+                    <div class="text-danger" id="UserError"></div>
+                </div>
+                <div class="mt-4">
+                    <button onclick="ContinueClick()" class="btn btn-warning w-100">Continue</button>
+                </div>
+            </div>
+            <div id="PwdContainer" style="display: none;">
+                <label class="form-label fw-bold"> Your Password</label>
+                <div>
+                    <input type="password" id="Password" class="form-control">
+                    <div class="text-danger" id="PwdError"></div>
+                </div>
+                <div class="mt-4">
+                    <button onclick="LoginClick()" class="btn btn-warning w-100">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

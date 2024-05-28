@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        // JavaScript functions for button functionality
+        var rotatingInterval;
+
+        function rotateImage() {
+            var image = document.getElementById('image');
+            var rotationAngle = 0;
+            rotatingInterval = setInterval(function() {
+                rotationAngle += 1;
+                image.style.transform = 'rotate(' + rotationAngle + 'deg)';
+            }, 10);
+        }
+
+        function pauseImage() {
+            clearInterval(rotatingInterval);
+        }
+
+        function stopImage() {
+            clearInterval(rotatingInterval);
+            var image = document.getElementById('image');
+            image.style.transform = 'rotate(0deg)';
+        }
+    </script>
+</head>
+<body>
+    
+    <img id="image" src="../public/images/women-fashion.jpg" width="300" height="300">
+    <br><br>
+    <button class="bi bi-arrow-clockwise" onclick="rotateImage()"></button>
+    <button class="bi bi-pause" onclick="pauseImage()"></button>
+    <button class="bi bi-stop" onclick="stopImage()"></button>
+</body>
+</html>

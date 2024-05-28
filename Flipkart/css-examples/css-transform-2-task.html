@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform2(Translate) </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .org{
+            opacity: 1;
+        }
+        .dup, .dup1, .dup2, .dup3{
+            opacity: 0.2;
+        }
+        .dup{
+            transform: translate(-110px, 0px);
+            transition: 5s;
+        }
+        .dup1{
+            transform: translateX(-200px);
+            transition: 5s;
+        }
+        .dup2{
+            transform: translateX(-300px);
+            transition: 5s;
+        }
+        .dup3{
+            transform: translateX(-400px);
+            transition: 5s;
+        }
+        .dup:hover{
+            transform: translate(-100px,-100px);
+            transition: 3s;
+        }
+        .dup1:hover{
+            transform: translate(100px,100px);
+            transition: 3s;
+        }
+        .dup2:hover{
+            transform: translate(200px,200px);
+            transition: 3s;
+        }
+        .dup3:hover{
+            transform: translate(-200px,-200px);
+            transition: 3s;
+        }
+    </style>
+</head>
+<body>
+    <img class="org" src="../public/images/women-fashion.jpg" width="100" height="100">
+    <img class="dup" src="../public/images/women-fashion.jpg" width="100" height="100">
+    <img class="dup1" src="../public/images/women-fashion.jpg" width="100" height="100">
+    <img class="dup2" src="../public/images/women-fashion.jpg" width="100" height="100">
+    <img class="dup3" src="../public/images/women-fashion.jpg" width="100" height="100">
+</body>
+</html>
+
+<!--
+     body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .org{
+            opacity: 1;
+        }
+        .dup, .dup1, .dup2, .dup3{
+            opacity: 0.2;
+        }
+        .dup{
+            transform: translate(-110px, 0px);
+            transition: 5s;
+        }
+        .dup1{
+            transform: translateX(-200px);
+            transition: 5s;
+        }
+        .dup2{
+            transform: translateX(-300px);
+            transition: 5s;
+        }
+        .dup3{
+            transform: translateX(-400px);
+            transition: 5s;
+        }
+        .dup:hover{
+            transform: translate(-100px,-100px);
+            transition: 3s;
+        }
+        .dup1:hover{
+            transform: translate(100px,100px);
+            transition: 3s;
+        }
+        .dup2:hover{
+            transform: translate(200px,200px);
+            transition: 3s;
+        }
+        .dup3:hover{
+            transform: translate(-200px,-200px);
+            transition: 3s;
+        }
+-->

@@ -1,0 +1,21 @@
+<script>
+    var values = [10,"A",true];
+    for(var property in values){
+        document.write(`${property} [${typeof property}] [${typeof values[property]}]<br>`);
+    }
+    document.write(values[2]);
+</script>
+
+<!--
+    "[]" meta character  //static
+    Array() constructor  //dynamic(discrete)
+
+    var values = new Array(2);
+    values[0] = 10;
+    values[1] = 20;
+    values[2] = 30;
+    values[3] = "A";
+    values[4] = "B";
+    values[5] = true;
+    document.write(values);
+-->

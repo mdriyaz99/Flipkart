@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Cards</title>
+    <style>
+        header img{
+            margin-top: -10px;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            grid-gap: 20px;
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-top: -300px;
+        }
+        .card{
+            box-shadow: 2px 2px 2px gray;
+            background-color: white;
+            padding: 5px;
+            height: 420px;
+        }
+        .card-title{
+            font-size: 22px;
+            font-family: arial;
+            font-weight: bold;
+        }
+        .card-header{
+            padding: 4px;
+        }
+        .card-body{
+            height: 300px;
+            margin-bottom: 25px;
+        }
+        .card-footer{
+            padding: 10px;
+        }
+        .footer-title{
+            font-size: 14px;
+            font-family: arial;
+            color: blue;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-gap: 5px;
+            font-family: arial;
+            font-size: 15px;
+        }
+        .row img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header >
+        <img src="public/images/amazon-background.jpg" width="100%">
+    </header>
+    <section>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Starts early for Prime members</span>
+            </div>
+            <div class="card-body">
+                <img src="public/images/a1.jpg" width="100%" height="275px">
+            </div>
+            <div class="card-footer">
+                <span class="footer-title"> Start 30-day Prime FREE trial&gt; </span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Revamp your home in style</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="public/images/a2.jpg" >
+                        <p>Cushion covers, bedsheets & more</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a3.jpg" >
+                        <p>Vases, decor and more</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="public/images/a4.jpg" >
+                        <p>Home storage</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a5.jpg" >
+                        <p>Lighting solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="footer-title">Explore all</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Up to 60% off | Styles for men</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="public/images/a6.jpg" >
+                        <p>Clothing</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a7.jpg" >
+                        <p>Footwear</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="public/images/a8.jpg" >
+                        <p>Watches</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a9.jpg" >
+                        <p>Bags & Wallets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="footer-title">End of season sale</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Starting ₹99 | All your home improvement needs</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <img src="public/images/a10.jpg" >
+                        <p>Spin mops, wipes & more</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a11.jpg" >
+                        <p>Bathroom hardware & accessories</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <img src="public/images/a12.jpg" >
+                        <p>Hammers, screwdrivers & more</p>
+                    </div>
+                    <div>
+                        <img src="public/images/a13.jpg" >
+                        <p>Extension boards, plugs & more</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="footer-title">Explore all</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

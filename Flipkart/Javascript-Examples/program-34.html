@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+            fetch("../data/products.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                products.map(function(product){
+                    var tr =document.createElement("tr");
+
+                    var tdName = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdImage = document.createElement("td");
+
+                    tdName.innerHTML = product.Name;
+                    tdPrice.innerHTML = product.Price.toLocaleString('en-au', {style:'currency', currency:'AUD'});
+                    tdImage.innerHTML = `<img src=${product.Image} width="200" height="200"> `;
+
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdImage);
+
+                    document.querySelector("tbody").appendChild(tr);
+                })
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Preview</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

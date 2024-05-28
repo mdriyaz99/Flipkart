@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Msg1(){
+            document.querySelector("h1").innerHTML = "Hello!";
+        }
+        function Msg2(){
+            document.querySelector("h1").innerHTML = "How are you?";
+        }
+        function Msg3(){
+            document.querySelector("h1").innerHTML = "Welcome to JavaScript";
+        }
+        var m1, m2, m3;
+        function bodyload(){
+           m1 = setTimeout(Msg1, 3000);
+           m2 = setTimeout(Msg2, 10000);
+           m3 = setTimeout(Msg3, 15000);
+        }
+        function CancelClick(){
+            clearTimeout(m2);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <button onclick="CancelClick()">Cancel Msg2</button>
+    <h1 align="center"></h1>
+</body>
+</html>

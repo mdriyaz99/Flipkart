@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 2</title>
+</head>
+<body>
+    <form>
+        <dl>
+            <dt>Password</dt>
+            <dd> <input type="password" name="Password"  pattern="(?=.*[A-Z])\w{4,15}"></dd>
+            <dt>Interest Rate</dt>
+            <dd> <input type="number" name="Rate" min="10.45" max="18.45" value="10.45" step="0.01"></dd>
+            <dd> <input type="number" name="Age" min="5" max="50" value="10" step="5"></dd>
+            <dt>Interest Rate</dt>
+            <dd> <input type="range" name="Rate" min="10.45" max="18.45" value="10.45" step="0.01"></dd>
+            <dt>Select Color</dt>
+            <dd> <input type="color" name="Color" value="#ffff00"></dd>
+            <dt>Your Email</dt>
+            <dd> <input type="email" name="Email" autofocus value="john@gmail.com"></dd>
+            <dt>Your Website</dt>
+            <dd> <input type="url" name="URL"></dd>
+            <dt>Departure</dt>
+            <dd> <input type="date" min="2024-01-21" max="2024-02-10" value="2024-01-25" name="Departure"></dd>
+            <dt>Photo</dt>
+            <dd> <input type="file" name="Photo" multiple accept=".jpg,.gif"> <button>Upload</button></dd> 
+        </dl>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

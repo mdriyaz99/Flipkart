@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motel Booking Form</title>
+   
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var Roomtype="";
+        var Roomcost="";
+        var Remaining="";
+        var time=new Date();
+
+        function bookingclick(){
+            document.getElementById("lblName").innerHTML=document.getElementById("txtname").value;
+            document.getElementById("lbldate").innerHTML=document.getElementById("txtdate").value=time.toLocaleDateString();
+      var Days = document.getElementById("lbldays").innerHTML=document.getElementById("txtdays").value;
+       var Persons = document.getElementById("lblpersons").innerHTML=document.getElementById("txtpersons").value;
+       var Advance= document.getElementById("lblAdvance").innerHTML=document.getElementById("Advance").value;
+        var imageroom= document.getElementById("imgroom");
+         document.getElementById("lblremaining");
+
+          var deluxroom=document.getElementById("deluxroom");
+          var suiteroom=document.getElementById("suiteroom");
+          var AcRoom=document.getElementById("Acroom");
+          var lockerRoom=document.getElementById("lockerroom");
+
+          if(deluxroom.checked)
+          {
+            if(Acroom.checked)
+                 {
+                  imgroom.src="../public/image/delux-rooms.jpeg";
+                  if(persons<=3){
+                   
+                   Roomtype+=Acroom.value;
+                   Roomcost=5000;
+                   Roomcost*=Days;
+                Roomcost-=Advance;
+               
+               
+                  }
+                  else{
+                    Roomtype+=Acroom.value;
+                   Roomcost=7000;
+                   Roomcost*=Days;
+                Roomcost-=Advance;
+                  }
+                 }
+               if(lockerroom.checked)
+               {
+                Roomtype+=lockerroom.value;
+                lockercost=1000;
+                Roomcost+=lockercost;
+                Roomcost*=Days;
+                Roomcost-=Advance;
+               }
+              }
+            if(suiteroom.checked)
+            {
+            imgroom.src="../public/image/suite-room.jpeg";
+               if(Acroom.checked)
+               {
+                if(persons<=3){
+                  Roomtype+=Acroom.value;
+                Roomcost=7000;
+                Roomcost*=Days;
+                Roomcost-=Advance;
+                }
+                 else{
+                  Roomtype+=Acroom.value;
+                Roomcost=9000;
+                Roomcost*=Days;
+                Roomcost-=Advance;
+                }
+               }
+               if(lockerroom.checked)
+               {
+                Roomtype+=lockerroom.value;
+                lockercost=1000;
+                Roomcost+=lockercost;
+                Roomcost*=Days;
+                Roomcost-=Advance;
+               }
+           
+          }
+          document.getElementById("lblName").innerHTML=Roomtype;
+             var Total= document.getElementById("lblTotal").innerHTML=Roomcost;
+            document.getElementById("lblremaining").innerHTML= `Total-Advance=${Total-Advance}`;
+
+
+        }
+
+    </script>
+</head>
+<body class="container-fluid bg-dark">
+   <ul class="nav nav-tabs bg-primary">
+       <li class="nav-item"><a href="#customerinfo" data-bs-toggle="tab" class="nav-link text-dark active ">Customer Details</a></li>
+       <li class="nav-item"><a href="#roomtype" data-bs-toggle="tab" class="nav-link  text-dark ">Select Room Type</a></li>
+       <li class="nav-item"><a href="#Amenities" data-bs-toggle="tab" class="nav-link  text-dark ">Select Amenities</a></li>
+       <li class="nav-item"><a href="#Advanceamount" data-bs-toggle="tab" class="nav-link  text-dark ">Advance Amount</a></li>
+       <li class="nav-item"><a href="#register" data-bs-toggle="tab" class="nav-link  text-dark ">Register</a></li>
+
+   </ul>
+   <h2 align="center">Motel Booking Form</h2>
+
+   <div class="tab-content d-flex justify-content-center align-item-center">
+    <div class="tab-pane border bg-primary text-dark p-4 active border-1 rounded rounded-1 w-25" id="customerinfo">
+        <dl>
+            <dt><label class="form-label">Customer Name</label></dt>
+            <dd><input type="text" id="txtname"></dd>
+            <dt><label class="form-label">Check in Dates</label></dt>
+            <dd> <input type="date" id="txtdate"></dd>
+            <dt><label class="form-label">Total Number of Days</label></dt>
+            <dd><input type="number" id="txtdays"></dd>
+            <dt><label class="form-label">Toatal No of Person</label></dt>
+            <dd><input type="number" id="txtpersons" max="5"></dd>
+        </dl>
+
+    </div>
+    <div  class=" tab-pane p-4 w-50 border border-1 w-70 bg-dark m-3" id="roomtype">
+        <div class="row">
+            <div class="col-6">
+                <img src="../public/images/deluxe-room.jpg" width="250" heigth="250">
+                <label for="rooms" class="form-label fw-bold text-light h-4">Delux Room</label><br><input id="deluxroom" class="form-check-input" type="radio" name="rooms">
+
+            </div>
+            <div class="col-6">
+                <img src="../public/images/suite-room.jpg" width="210" heigth="210">
+                <label class="form-label h-4 fw-bold text-light">Suite Room</label><br><input id="suiteroom" class="form-check-input" type="radio" name="rooms">
+            </div>
+
+        </div>
+
+
+       
+
+    </div>
+
+    <div class="tab-pane border border-1 rounded rounded-1 bg-black p-4 text-light" id="Amenities">
+        <div class="row">
+
+            <div class="col-6">
+                <img src="../public/images/ac-room.jpg"  width="100" height="100"><br>
+                <label for="rooms" class="form-label h-4 text-white" >Ac Room</label><br><input id="Acroom" class="form-check-input" type="checkbox" name="rooms">
+            </div>
+
+            <div class="col-6">
+                <img src="../public/images/locker.jpg"  width="100" height="100"><br>
+                <label for="rooms" class="form-label h-4 text-white">locker Room</label><input id="lockerroom" class="form-check-input" type="checkbox" name="rooms">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tab-pane" id="Advanceamount">
+        <form>
+           <span class="fw-bold" >Advance Amount</span><input type="number" class="form-control" id="Adavnce" max="5">
+        </form>
+
+    </div>
+    <div class="tab-pane" id="register">
+        <p style="color: rgb(230, 139, 20); font-size: 30px; font-weight: bold;">Booking register</p>
+       <button onclick="bookingclick()" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#summary">Rigister</button>
+
+
+       <div class="modal fade" id="summary">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>booking Summary</h2>
+                    <button class="btn btn-close bg-danger" data-bs-dismiss="modal"> </button>
+
+                </div>
+                <div class="modal-body bg-danger-subtle">
+                    <div class="row">
+                        <div class="col">
+                            <dl>
+                                <dt>customerinfo</dt>
+                                <dd id="lblName" ></dd>
+                                <dt>check in date</dt>
+                                <dd id="lbldate"></dd>
+                                <dt>Total no of days</dt>
+                                <dd id="lbldays"></dd>
+                                <dt>Total no of persons</dt>
+                                <dd id="lblpersons"></dd>
+                                <dt>Total</dt>
+                                <dd id="lblTotal" class="fw-bold text-danger"></dd>
+                                <dt>Advance</dt>
+                                <dd id="lblAdvance" class="fw-bold text-danger"></dd>
+
+                                <dt>Remaining Amount</dt>
+                                <dd id="lblremaining" class="fw-bold text-danger"></dd>
+                            </dl>
+
+
+                        </div>
+                        <div class="col">
+                            <img width="100%" id="imgroom">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+       </div>
+
+
+   </div>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

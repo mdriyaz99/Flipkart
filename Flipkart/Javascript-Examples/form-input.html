@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function RegisterClick(){
+            document.getElementById("btnAdd").style.display = "none";
+            document.getElementById("detailsContainer").style.display = "block";
+
+            document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+            document.getElementById("lblPrice").innerHTML = document.getElementById("txtPrice").value;
+            document.getElementById("lblCity").innerHTML = document.getElementById("lstCities").value;
+            
+
+            StockCheckbox = document.getElementById("optStock");
+            StockStatus = "";
+
+            if(StockCheckbox.checked){
+                StockStatus = "Available"
+            } else {
+                StockStatus = "Out of Stock"
+
+            }
+
+            document.getElementById("lblStock").innerHTML = StockStatus;
+        }
+
+        function EditClick(){
+            document.getElementById("btnRegister").innerHTML = "Save"
+            document.getElementById("btnRegister").className = "btn btn-success"
+        }
+
+    </script>
+</head>
+<body class="container-fluid">
+    <button id="btnAdd" data-bs-target="#register" data-bs-toggle="modal" class="btn btn-primary mt-2" id="btnAdd">Add Product</button>
+    <div class="modal fade" id="register">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Register Product</h2>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd><input type="text" class="form-control" id="txtName"></dd>
+                        <dt>Price</dt>
+                        <dd><input type="number" class="form-control" id="txtPrice"></dd>
+                        <dt>Shipped To</dt>
+                        <dd>
+                            <select id="lstCities" class="form-select">
+                                <option>Select City</option>
+                                <option>Delhi</option>
+                                <option>Hyderabad</option>
+                            </select>
+                        </dd>
+                        <dt>Stock</dt>
+                        <dd class="form-switch">
+                            <input type="checkbox" class="form-check-input" id="optStock"> <label> Available</label>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="RegisterClick()" id="btnRegister" data-bs-dismiss="modal" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detailsContainer" style="display: none;">
+        <h3>Product Details</h3>
+        <dl class="row">
+            <dt class="col-3">Name</dt>
+            <dd class="col-9" id="lblName"></dd>
+            <dt class="col-3">Price</dt>
+            <dd class="col-9" id="lblPrice"></dd>
+            <dt class="col-3">City</dt>
+            <dd class="col-9" id="lblCity"></dd>
+            <dt class="col-3">Stock</dt>
+            <dd class="col-9" id="lblStock"></dd>
+        </dl>
+        <button class="bi bi-pen-fill btn btn-warning" data-bs-target="#register" data-bs-toggle="modal" onclick="EditClick()"> Edit </button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

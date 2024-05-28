@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        @keyframes Fade {
+            from{
+                opacity: 0;
+            } to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+       function ToggleContent(){
+        var q1 = document.getElementById("q1");
+        var icon = document.getElementById("icon");
+        q1.style.display = (q1.style.display=="none")?"block":"none";
+        q1.style.animationName = "Fade";
+        q1.style.animationDuration = "2s";
+        icon.className = (icon.className=="bi bi-plus")?"bi bi-dash":"bi bi-plus";
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    <h1 class="text-center">Frequently Asked Questions</h1>
+    <button onclick="ToggleContent()" class="btn btn-dark w-100 d-flex justify-content-between"> <span>What is Netflix?</span> <span id="icon" class="bi bi-plus"></span> </button>
+    <p id="q1" class="bg-dark text-white p-2 mt-1" style="display: none;">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ipsum, sequi fugiat in nihil eum pariatur assumenda, ad adipisci unde esse, labore quasi modi consequuntur voluptatem repudiandae! Minus, facilis cum!
+    </p>
+</body>
+</html>

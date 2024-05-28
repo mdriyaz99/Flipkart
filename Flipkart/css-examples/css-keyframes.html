@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes & Animations</title>
+    <style>
+
+        @keyframes SlideIn {
+            from{
+                transform: translateX(100%);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+
+        .container{
+            overflow: hidden;
+            display: flex;
+            
+        }
+
+        .container{
+            animation-name: SlideIn;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            -moz-animation-name: SlideIn;
+            -moz-animation-duration: 4s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-direction: alternate;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <img src="../public/images/slide-1.jpg" width="100%">
+        <img src="../public/images/slide-2.jpg" width="100%">
+        <img src="../public/images/slide-3.jpg" width="100%">
+        <h1>ThankYou</h1>
+    </div>
+</body>
+</html>
+
+
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes & Animations</title>
+    <style>
+
+        @keyframes SlideIn {
+            from{
+                transform: translateX(100%);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+
+        .container{
+            overflow: hidden;
+            display: flex;
+            
+        }
+
+        img{
+            animation-name: SlideIn;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            -moz-animation-name: SlideIn;
+            -moz-animation-duration: 4s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-direction: alternate;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../public/images/slide-1.jpg" width="100%">
+        <img src="../public/images/slide-2.jpg" width="100%">
+        <img src="../public/images/slide-3.jpg" width="100%">
+    </div>
+</body>
+</html>
+-->

@@ -1,0 +1,84 @@
+<script>
+        fetch("https://fakestoreapi.com/products")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(products){
+            var result = products.filter(function(product){
+                return (product.category==="electronics" || product.category==="jewelery") || (product.rating.rate>4);
+            });
+            result.map(function(item){
+                document.write(`<li> ${item.title} <b> ${item.category} </b> - <i> ${item.rating.rate} </i> </li>`);
+            })
+        })
+    
+</script>
+
+<!--
+
+<script>
+    function findTriangleType(side1, side2, side3){
+        if((side1===side2) && (side1===side3))
+        {
+            document.write("Equilateral Triangle");
+        }
+        else if((side1===side2) || (side2===side3) || (side1===side3))
+        {
+            document.write("Isosceles Triangle");
+        }
+        else
+        {
+            document.write("Scalene Triangle");
+        }
+    }
+    findTriangleType(parseInt(prompt("Enter Side1")),parseInt(prompt("Enter Side2")),parseInt(prompt("Enter Side3")));
+</script>
+
+<script>
+    function FindGrade(rating) {
+    if (rating >= 1 && rating <= 2) {
+        document.write("Grade C");
+    } else if (rating > 2 && rating <= 4) {
+        document.write("Grade B");
+    } else if (rating > 4 && rating <= 5) {
+        document.write("Grade A");
+    } else {
+        document.write("Invalid rating");
+    }
+}
+    FindGrade(parseFloat(prompt("Enter Rating")));
+</script>
+
+<script>
+    function FindGreatest(a, b, c)
+    {
+        if((a > b) && (a > c))
+        {
+            document.write("a is greater");
+        } else if(b > c)
+        {
+            document.write("b is greater");
+        } else if(a===b && b===c)
+        {
+            document.write("All values are equal.");
+        }
+        else
+        {
+            document.write("c is greater");
+        }
+    }
+    FindGreatest(parseInt(prompt("Enter a")), parseInt(prompt("Enter b")), parseInt(prompt("Enter c")))
+</script>
+
+
+<script>
+    function FindRange(value, min, max) {
+        if(value>=min && value<=max){
+            document.write(`<b>Your value ${value} is in the range of ${min} to ${max}.</b>`);
+        } else {
+            document.write(`<b>Your value ${value} is not in the range of ${min} to ${max}.</b>`);
+        }
+    }
+    FindRange(parseInt(prompt("Enter Value")), parseInt(prompt("Enter Min")), parseInt(prompt("Enter Max")));
+</script>
+-->

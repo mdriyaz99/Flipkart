@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.Write Output</title>
+    <script>
+        
+        function PayClick(){
+            flag = confirm("Payment Initiated \nInvoice will be sent \nBill Amount=" + (3000*2) + "\nAre you sure?");
+            if(flag==true){
+                document.write("<font face='arial' size='6' color='green'><b>Payment Completed..</b></font>");
+            } else {
+                document.write("Payment Cancelled..</br><a href='output-2.html'>try again</a>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="PayClick()">Pay</button>
+</body>
+</html>

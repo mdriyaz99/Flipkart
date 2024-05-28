@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-1</title>
+    <script type="text/javascript">
+        "use strict";
+        function bodyload()
+        {
+            window.document.images[0].src="../public/images/women-fashion.jpg";
+            window.document.forms[0].elements[0].value="Register";
+            window.document.forms[1].elements[1].value="Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" height="100" border="1">
+    </div>
+    <div>
+        <form>
+            <h2>Register</h2>
+            User Name : <input type="button"> <input type="text"> 
+        </form>
+    </div>
+    <div>
+        <form>
+            <h2>Login</h2>
+            Mobile : <input type="text"> <input type="button">
+        </form>
+    </div>
+</body>
+</html>

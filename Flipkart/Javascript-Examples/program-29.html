@@ -1,0 +1,20 @@
+<script>
+    var tv = {
+        "Name": "Samsung TV",
+        "Price": 56000.33,
+        "Qty": 1,
+        "Total": function(){
+            return this.Qty * this.Price;
+        },
+        "Print": function(){
+            document.write(`Name=${this.Name}<br>Price=${this.Price}<br>Qty=${this.Qty}<br>Total=${this.Total()}<br><br>`);
+        }
+    }
+    tv.Qty = parseInt(prompt("Enter Qty"));
+    tv.Print();
+    tv.Print();
+</script>
+
+<!--
+    document.write(`Name=${tv.Name}<br>Price=${tv.Price}<br>Qty=${tv.Qty}<br>Total=${tv.Total()}`);
+-->

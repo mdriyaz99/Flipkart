@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Classes</title>
+    <style>
+        input:optional+span{
+            display: none;
+        }
+        input:required+span{
+            display: inline;
+            color: darkred;
+        }
+        input:in-range+div{
+            display: none;
+        }
+        input:out-of-range+div{
+            display: block;
+            color: darkred;
+        }
+        .username:valid+div{
+            display: none;
+        }
+        .username:invalid+div{
+            display: block;
+            color: darkred;
+        }
+        .mobile:valid+div{
+            display: none;
+        }
+        .mobile:invalid+div{
+            display: block;
+            color: darkred;
+        }
+        .Password:valid+div{
+            display: none;
+        }
+        .Password:invalid+div{
+            display: block;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" class="UserName" required><span>*</span></dd>
+            <dt>Password</dt>
+            <dd><input type="password" class="Password" required><span>*</span></dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" min="15" max="30">
+                <div>Age Must Be Between 15 to 30</div>
+            </dd>
+        </dl>
+        <button>Register</button>
+        <br><br>
+        <fieldset>
+            <legend>Valid Invalid Classes</legend>
+            <dl>
+                <dt>UserName</dt>
+                <dd>
+                    <input type="text" required minlength="4"  class="username">
+                    <div>User Name Required</div>
+                </dd>
+                <dt>Password</dt>
+                <dd>
+                    <input type="password" class="Password" pattern="(?=.*[A-Z])\w{4,10}" >
+                    <div>Password 4 to 10 chars. At least one uppercase letter required.</div>
+                </dd>
+                <dt>Mobile</dt>
+                <dd>
+                    <input type="text" pattern="\+61\d{10}" class="mobile">
+                    <div>Invalid Mobile. +61 & 10 digit required.</div>
+                </dd>
+                <br>
+                <button>Register</button>
+            </dl>
+        </fieldset>
+    </form>
+</body>
+</html>

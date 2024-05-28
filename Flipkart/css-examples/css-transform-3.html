@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform 3</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .fashion{
+            background-image: url(../public/images/women-fashion.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            overflow: hidden;
+        }
+        nav{
+            color: white;
+            font-size: 30px;
+            transform: translateY(50px);
+            transition: 100ms;
+        }
+        .fashion:hover nav{
+            transform: translateY(-10px);
+            transition: 200ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="fashion">
+        <nav>
+            <span class="bi bi-heart-fill"></span>
+            <span class="bi bi-cart4"></span>
+        </nav>
+    </div>
+</body>
+</html>

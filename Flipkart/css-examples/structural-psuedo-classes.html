@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Psuedo Classes</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 100px;
+            border: 1px solid gray;
+            padding: 5px;
+            margin-bottom: 2px;
+        }
+        li:nth-last-of-type(2n+1)
+        {
+            background-color: yellow;
+        }
+        li:nth-of-type(2n):hover{
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Shop</li>
+        <li>Blog</li>
+        <li>Pages</li>
+    </ul>
+</body>
+</html>
+
+<!--
+    li:first-child{
+            background-color: yellow;
+        }
+    li:last-child{
+            background-color: yellow;
+        }
+    li:nth-child(3)
+        {
+            background-color: yellow;
+        }
+    li:nth-child(odd)
+        {
+            background-color: yellow;
+        }
+    li:nth-child(even)
+        {
+            background-color: yellow;
+        }
+        li:nth-of-type(2n)               ===>Every second one starting from 2nd
+        {
+            background-color: yellow;
+        }
+        li:nth-of-type(2n+1)            ===>Every second one starting from top 1st
+        {
+            background-color: yellow;
+        }
+        li:nth-of-type(2n+3)            ===>Every second one starting from 3rd
+        {
+            background-color: yellow;
+        }
+        li:nth-of-type(2n):hover        ==>Every second one on mouse over
+        {
+            background-color: lightpink;
+        }
+        li:nth-last-of-type(2n+1)       ===>Every 2nd one starting from bottom 1st
+        {
+            background-color: yellow;
+        }
+        
+
+-->

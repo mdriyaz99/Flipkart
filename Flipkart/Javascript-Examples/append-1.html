@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function AddClick(){
+            var select = document.createElement("select");
+            var opt1 = document.createElement("option");
+            var opt2 = document.createElement("option")
+
+            opt1.text = "Delhi";
+            opt2.text = "Hyderabad";
+
+            select.appendChild(opt1);
+            select.appendChild(opt2);
+
+            document.getElementById("container").appendChild(select);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()">Add</button>
+    <div id="container">
+
+    </div>
+</body>
+</html>

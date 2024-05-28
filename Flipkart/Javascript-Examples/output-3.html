@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerText & InnerHTML</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        c = 0;
+        function AddClick(){
+            c++;
+            document.querySelector("#count").innerHTML="<b>" + c + "</b>";
+        }
+    </script>
+    <style>
+        #count{
+            background-color: red;
+            color: white;
+            padding: 2px;
+            border-radius: 50px;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="AddClick()" class="bi bi-cart2"> Add to Cart</button>
+    <div style="position: fixed; top: 20px; right: 100px;">
+        <span class="bi bi-cart4"> <span id="count"></span> </span>
+    </div>
+</body>
+</html>
+
+<!--
+    document.querySelector("#count").innerText=c;   format not work in innerText
+-->

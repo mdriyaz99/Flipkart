@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ApplyClick(){
+            var h = document.getElementById("txtHoz").value;
+            var v = document.getElementById("txtVer").value;
+            var b = document.getElementById("txtBlur").value;
+            var color = document.getElementById("txtColor").value;
+            document.querySelector("p").style.textShadow = `${h}px ${v}px ${b}px ${color}`;
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h4>Shadow Effects</h4>
+    <dl>
+        <dt>Horizontal</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtHoz"></dd>
+        <dt>Vertical</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtVer"></dd>
+        <dt>Blur</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtBlur"></dd>
+        <dt>Color</dt>
+        <dd><input type="color" id="txtColor"></dd>
+    </dl>
+    <button onclick="ApplyClick()">Apply</button>
+    <div class="container" style="font-size: 50px;">
+        <p id="lblTxt">Sample Text</p>
+    </div>
+</body>
+</html>

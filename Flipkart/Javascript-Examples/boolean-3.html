@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    
+    <script>
+       function TermsChange(){
+        var terms = document.getElementById("terms");
+        var button = document.querySelector("button")
+        button.disabled = (terms.checked)?false:true;
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    <h3>Disable</h3>
+    <textarea id="" cols="30" rows="10"></textarea>
+    <br><br>
+    <input id="terms" onchange="TermsChange()" type="checkbox"> <label> I Accept</label>
+    <br><br>
+    <button disabled class="btn btn-primary">Submit</button>
+</body>
+</html>

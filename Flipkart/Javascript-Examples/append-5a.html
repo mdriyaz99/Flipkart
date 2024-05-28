@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categories = ["All", "Mobiles", "Watches", "Fashion", "Footwear"];
+        function bodyload(){
+            categories.map(function(category){
+
+                var li = document.createElement("li");
+                li.innerHTML = `<input type="checkbox"></input> <label> ${category} </label>`;
+
+                document.querySelector("ul").appendChild(li);
+               
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <ul>
+
+    </ul>
+</body>
+</html>

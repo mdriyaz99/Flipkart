@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    <style>
+        ul{
+            list-style: none;
+            width: 120px;
+            height: 40px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+        .UserID{
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        .UserID:focus{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Select Product</legend>
+            <div>
+                <input type="text" class="UserID" placeholder="User ID">
+            </div>
+            <br><br>
+            <div>
+                <label for="UserName">User Name</label>
+             <div>
+                <input type="text" name="UserName">
+             </div>
+            </div>
+            <input type="radio" name="gender" value="Male" checked> <label for="gender">Male</label>
+            <input type="radio" name="gender" value="Female" > <label for="gender">Female</label>
+            <br><br>
+            <ul>
+                <li> <input type="checkbox" name="course" value="Java"> <label for="course">Java</label></li>
+                <li> <input type="checkbox" name="course" value="UI"> <label for="course">UI</label></li>
+                <li> <input type="checkbox" name="course" value=".Net"> <label for="course">.Net</label></li>
+                <li> <input type="checkbox" name="course" value="Oracle"> <label for="course">Oracle</label></li>
+            </ul>
+            <br><br>
+            <div>
+                <select name="Product">
+                    <option>All</option>
+                    <optgroup label="Your Language">
+                        <option value="Eng">English</option>
+                        <option value="हिंदी">हिंदी</option>
+                    </optgroup>
+                    <optgroup label="Electonics">
+                        <option value="ELETV">Televisions</option>
+                        <option value="ELEMOB" disabled>Mobiles [out of stock]</option>
+                    </optgroup>
+                    <optgroup label="Footwear">
+                        <option selected>Boots</option>
+                        <option>Sneakers</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br><br>
+            <button>Submit</button>
+        </fieldset>
+        
+    </form>
+</body>
+</html>

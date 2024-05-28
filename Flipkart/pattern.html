@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    <form>
+        Test : <input type="text" name="pattern" pattern="co?lo*u+r"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern=".at"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="gmail\.com|outlook\.com"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern=".o."> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="red|green|blue|yellow"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="199|599"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="[a,d,s]"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="[a-s]"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="[a-d,4-9,A-D]"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="(?=.*[A-Z])\w{4,15}"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&])[\w\W]{4,15}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="[^a-d,4-9,A-D]"> <button>Submit</button>
+        Test : <input type="text" name="pattern" placeholder="+(1)(425) 555-0100" pattern="\+\(1\)\(\d{3}\)\s\d{3}-\d{4}"> <button>Submit</button>
+        Test : <input type="text" name="pattern" placeholder="+(44)(20) 1234 5678" pattern="\+\(44\)\(\d{2}\)\s\d{4}\s\d{4}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="\d?\d"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="\+61\d{10}"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="HDFC000\d{4}|SBIN000\d{4}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="\D[4-9]"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="\w{4,10}"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="[a-z0-9_]{4,10}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="\w\d"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="\d{2,}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="\W\d"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="\w{2,5}"> <button>Submit</button>
+        <br><br>
+        Test : <input type="text" name="pattern" pattern="\d\s?\d"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="colou?r\i"> <button>Submit</button>
+        Test : <input type="text" name="pattern" pattern="\w{3}"> <button>Submit</button>
+    </form>
+</body>
+</html>

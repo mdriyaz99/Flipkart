@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Block & Inline</title>
+    <style>
+        .UserName:valid+span {
+            display: none;
+        }
+        .UserName:invalid+span {
+            display: block;
+            color: red;
+        }
+        #password:valid+span {
+            display: none;
+        }
+        #password:invalid+span{
+            display: inline;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+
+        <dt>User Name</dt>
+        <dd> <input type="text" class="UserName" required>
+        <span> *Name Required </span>
+        </dd>
+
+        <dt>Password</dt>
+        <dd> <input type="password" id="password" required>
+        <span> *Name Required </span>
+        </dd>
+    </dl>
+</body>
+</html>

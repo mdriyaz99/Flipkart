@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetCourses(){
+            var courses = document.getElementsByName("course");
+            var courseName = "";
+            for(var i=0; i<courses.length; i++)
+            {
+                if(courses[i].checked){
+                    courseName+=courses[i].value + "<br>";
+                }
+            }
+            document.querySelector("p").innerHTML = `Selected Course:<br> ${courseName}`;
+        }
+    </script>
+</head>
+<body>
+    <ol>
+        <li> <input onchange="GetCourses()" type="checkbox" name="course" value="Java"> <label>Java</label></li>
+        <li> <input onchange="GetCourses()" type="checkbox" name="course" value=".Net"> <label>.Net</label></li>
+        <li> <input onchange="GetCourses()" type="checkbox" name="course" value="Python"> <label>Python</label></li>
+        <li> <input onchange="GetCourses()" type="checkbox" name="course" value="Oracle"> <label>Oracle</label></li>
+    </ol>
+    <!-- <button onclick="SubmitClick()">Submit</button> -->
+    <p></p>
+</body>
+</html>

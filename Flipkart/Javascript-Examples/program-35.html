@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+   <script>
+       function bodyload(){
+           fetch("../data/products.json")
+           .then(function(response){
+            return response.json();
+           })
+           .then(function(products){
+                 products.map(function(product){
+
+                     var div = document.createElement("div");
+                     div.className = "card p-2 m-2";
+                     div.style.width = "200px"
+                     div.innerHTML = `
+                           <a href="javascript:window.open('${product.Image}','Preview', 'width=300 height=400')"> <img class="card-img-top" src=${product.Image} height="170"> </a>
+                           <div class="card-header">
+                              <p class="h6"> ${product.Name} </p>
+                           </div>
+                           <div class="card-body">
+                              <p> ${product.Price.toLocaleString('en-in', {style:'currency', currency:'INR'})}
+                           </div>
+                           <div class="card-footer">
+                              <button class="btn btn-warning w-100 bi bi-cart4"> Add to Cart </button>
+                           </div>
+                     `;
+
+                     document.querySelector("main").appendChild(div);
+
+                 })
+           })
+       }
+   </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+   <main class="d-flex flex-wrap mt-2">
+
+   </main>
+</body>
+</html>
+
+<!--
+   <a href=${product.Image} target="_blank"> <img class="card-img-top" src=${product.Image} height="170"> </a>
+-->

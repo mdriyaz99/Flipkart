@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent Output</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function AddClick(){
+            flag = confirm("Item will be added to Cart");
+            console.log("Add Button Clicked");
+            if(flag==true){
+            console.warn("Ok Clicked");
+                document.querySelector("p").textContent = " Item Added to the Cart";
+            } else {
+            console.error("Cancelled");
+                document.querySelector("p").textContent = "";
+            }
+
+        }
+    </script>
+    
+</head>
+<body>
+    <button onclick="AddClick()" class="bi bi-cart2"> Add to Cart</button>
+    <p></p>
+</body>
+</html>
+
+<!--
+    same like innerText but faster and light weight
+-->

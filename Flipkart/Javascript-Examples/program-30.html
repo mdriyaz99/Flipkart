@@ -1,0 +1,25 @@
+<script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          //Object.keys method to fetch all keys
+    .then(function(product){
+        for(var key in product){
+            document.write(key + "<br>");
+        }
+    })
+</script>
+
+<!--
+    <script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          //Object.keys method to fetch all keys
+    .then(function(product){
+        Object.keys(product).map(function(key){
+            document.write(key + "<br>")
+        })
+    })
+</script>
+-->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occurance-&-behavioral-classes</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        p{
+            text-align: justify;
+        }
+        p::first-letter{
+            font-size: 40px;
+            float: left;
+        }
+        p::first-line{
+            color: gray;
+        }
+        p::selection{
+            background-color: yellow;
+            text-decoration: underline;
+        }
+        nav span::after{
+            content: " >> ";
+        }
+        nav span:last-child::after{
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span>Start</span>
+        <span>Select Product</span>
+        <span>Add to Cart</span>
+        <span>Checkout</span>
+        <span>Review Cart</span>
+        <span>Payment</span>
+    </nav>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vitae assumenda totam nobis quasi consequatur eligendi possimus velit? Aut deserunt nesciunt repellat? Repudiandae deleniti sint nisi itaque voluptate sunt blanditiis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores commodi fugit impedit sequi maiores ab, delectus itaque totam accusantium vero. Doloribus fugit possimus suscipit atque illo natus consectetur deserunt eius.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis ab quis asperiores, voluptates, fugiat a quia, eum sint sapiente laudantium porro dignissimos! Non eligendi repudiandae a sed, beatae nemo?
+    </p>
+</body>
+</html>

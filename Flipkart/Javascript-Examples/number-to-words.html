@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        #container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+<script>
+    function numberToWords(number) {
+        // Array of words for digits 0 to 19
+        const units = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+
+        // Array of words for multiples of 10 from 20 to 90
+        const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+        if (number === 0) {
+            return 'Zero';
+        }
+
+        let words = '';
+
+        // Convert billions
+        if (Math.floor(number / 1000000000) > 0) {
+            words += numberToWords(Math.floor(number / 1000000000)) + ' Billion ';
+            number %= 1000000000;
+        }
+
+        // Convert millions
+        if (Math.floor(number / 1000000) > 0) {
+            words += numberToWords(Math.floor(number / 1000000)) + ' Million ';
+            number %= 1000000;
+        }
+
+        // Convert thousands
+        if (Math.floor(number / 1000) > 0) {
+            words += numberToWords(Math.floor(number / 1000)) + ' Thousand ';
+            number %= 1000;
+        }
+
+        // Convert hundreds and less
+        if (Math.floor(number / 100) > 0) {
+            words += units[Math.floor(number / 100)] + ' Hundred ';
+            number %= 100;
+        }
+
+        // Convert tens and units
+        if (number > 0) {
+            if (words !== '') {
+                words += 'and ';
+            }
+
+            if (number < 20) {
+                words += units[number];
+            } else {
+                words += tens[Math.floor(number / 10)];
+                if (number % 10 !== 0) {
+                    words += ' ' + units[number % 10];
+                }
+            }
+        }
+
+        return words.trim();
+    }
+
+    function convertToWords() {
+        var numberInput = document.getElementById('numberInput').value.trim();
+        if (numberInput === '') {
+            document.getElementById('result').textContent = 'Please enter a number.';
+        } else {
+            var number = parseInt(numberInput);
+            if (isNaN(number)) {
+                document.getElementById('result').textContent = 'Invalid input. Please enter a valid number.';
+            } else {
+                document.getElementById('result').textContent = numberToWords(number);
+            }
+        }
+    }
+</script>
+
+</head>
+<body>
+    <div id="container">
+        <h2>Number to Words Converter</h2>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="convertToWords()">Convert</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>

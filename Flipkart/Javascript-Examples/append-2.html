@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function AddClick(){
+           var table = document.createElement("table");
+           table.border = "1";
+           table.width = "100%"
+
+           var thead = document.createElement("thead");
+           var tr = document.createElement("tr");
+           var th1 = document.createElement("th");
+           var th2 = document.createElement("th");
+
+           th1.innerHTML = "Name";
+           th2.innerHTML = "Price";
+
+           tr.appendChild(th1);
+           tr.appendChild(th2);
+
+           thead.appendChild(tr);
+
+           table.appendChild(thead);
+
+           document.getElementById("container").appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()">Add</button>
+    <div id="container">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm</title>
+    <script>
+        
+        function PayClick(){
+            flag = confirm("Payment Initiated \nInvoice will be sent \nBill Amount=" + (3000*2) + "\nAre you sure?");
+            if(flag==true){
+                alert("Payment Completed..");
+            } else {
+                alert("Payment Cancelled..");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="PayClick()">Pay</button>
+</body>
+</html>

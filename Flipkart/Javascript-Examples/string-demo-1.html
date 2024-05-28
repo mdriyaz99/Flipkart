@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyChars(){
+            var comments = document.getElementById("txtComments").value;
+            var maxCount = 100;
+            var msg = document.querySelector("p");
+            msg.innerHTML = `${(maxCount-comments.length)} chars left.`.fontcolor('red');
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Your Comments</legend>
+        <textarea id="txtComments" onkeyup="VerifyChars()" maxlength="100" cols="30" rows="10"></textarea>
+        <p></p>
+    </fieldset>
+</body>
+</html>

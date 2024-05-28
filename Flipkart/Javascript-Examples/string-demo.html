@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function NameBlur(){
+            var name = document.getElementById("txtName").value;
+            var lblError= document.getElementById("lblError");
+            if(name.length==0){
+                lblError.innerHTML = "Name Required".fontcolor('red');
+            }else{
+                lblError.innerHTML = "";
+            }
+        }
+        function VerifyName(){
+            var name = document.getElementById("txtName").value;
+            var lblError = document.getElementById("lblError");
+            if(name.length==0){
+                lblError.innerHTML = "Name Reqired".fontcolor('red');
+            }else{
+                if(name.length<4){
+                    lblError.innerHTML = "Name too short. Min 4 chars".fontcolor('red')
+                }else{
+                    lblError.innerHTML = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" onblur="NameBlur()" onkeyup="VerifyName()" id="txtName"></dd>
+        <dd id="lblError"></dd>
+    </dl>
+</body>
+</html>

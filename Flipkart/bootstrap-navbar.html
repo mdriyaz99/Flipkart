@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navbar</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <button data-bs-toggle="collapse" data-bs-target="#navItems" class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h2 class="navbar-brand">Shopper.</h2>
+            <div class="navbar-collapse collapse" id="navItems">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"> <a class="nav-link">Home</a> </li>
+                    <li class="nav-item"> <a class="nav-link">About</a> </li>
+                    <li class="nav-item"> <a class="nav-link">Shop</a> </li>
+                    <li class="nav-item"> <a class="nav-link">Blog</a> </li>
+                    <li class="nav-item"> <a class="nav-link">Contact</a> </li>
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search Amazon.au" class="form-control">
+                            <button class="bi bi-search btn btn-warning"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

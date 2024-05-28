@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered List</title>
+    <style>
+        .child-list{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .child-list2{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            margin-top: 20px;
+        }
+        .child-list3{
+            columns: 2;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Front End Tools</h3>
+    <ol type="1" start="45" reversed>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Sass</li>
+        <li>Bootstrap</li>
+    </ol>
+    <br><br>
+    <h5>--------------Nested OL-------------------------------</h5>
+    <br><br>
+    <ol type="1">
+        <li>Front End
+            <ol type="a">
+                <li>HTML</li>
+                <li>JavaScript</li>
+            </ol>
+        </li>
+        <li>Back End
+            <ol type="a">
+                <li>Node</li>
+                <li>MongoDB</li>
+            </ol>
+        </li>
+    </ol>
+    <br><br>
+    <h5>--------------------------------------------------------</h5>
+    <br><br>
+    <ol type="1">
+        <li>&lt;br&gt; is ______________ element
+            <ol type="a" class="child-list">
+                <li>Normal</li>
+                <li>void</li>
+                <li>RC Data</li>
+                <li>Raw Text</li>
+            </ol>
+        </li>
+    </ol>
+    <br><br>
+    <h5>--------------------------------------------------------</h5>
+    <br><br>
+    <ol type="1">
+        <li>&lt;br&gt; is ______________ element
+            <ol type="a" class="child-list2">
+                <li>Normal</li>
+                <li>void</li>
+                <li>RC Data</li>
+                <li>Raw Text</li>
+            </ol>
+        </li>
+    </ol>
+    <br><br>
+    <h5>--------------------------------------------------------</h5>
+    <br><br>
+    <ol type="1">
+        <li>&lt;br&gt; is ______________ element
+            <ol type="a" class="child-list3">
+                <li>Normal</li>
+                <li>void</li>
+                <li>RC Data</li>
+                <li>Raw Text</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

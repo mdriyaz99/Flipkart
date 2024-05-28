@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Position</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #count{
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+        button{
+            position: relative;
+        }
+        .women{
+            width: 400px;
+            height: 400px;
+            background-image: url(../public/images/women-fashion.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            margin-left: 400px;
+        }
+        .offer{
+            padding: 10px;
+            background-color: aqua;
+            color: blue;
+            text-align: center;
+            font-size: 18px;
+            font-family: arial;
+            border-radius: 70px;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="container-fluid m-3">
+    <button class="btn btn-warning bi bi-cart4 mt-4"> <span id="count" class="badge bg-danger rounded rounded-circle">2</span></button>
+
+    <div class="women">
+        <div class="offer">
+            <div>Save</div>
+            <div>30%</div>
+        </div>
+    </div>
+
+</body>
+</html>

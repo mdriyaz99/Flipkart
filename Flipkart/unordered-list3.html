@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unordered List2</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        ul{
+           list-style: none;
+           display: flex;
+        }
+       ul li{
+            border: 1px solid black;
+            padding: 5px;
+            width: 30px;
+            text-align: center;
+            margin-right: 5px;
+            background-color: gray;
+            color: black;
+            border-radius: 5px;
+        }
+        ul li:hover{
+            background-color: blue;
+            color: white;
+        }
+        ol{
+            list-style: none;
+        }
+        ol li{
+            width: 80px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 5px;
+            background-color: darkcyan;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+        }
+        ol li:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Pagination</h3>
+    <ul>
+        <li>&laquo;</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>&raquo;</li>
+    </ul>
+    <h3>Navigation</h3>
+    <nav>
+        <ol>
+            <li>Home</li>
+            <li>Shop</li>
+            <li>Docs</li>
+            <li>Fashion</li>
+            <li>Contact</li>
+        </ol>
+    </nav>
+</body>
+</html>

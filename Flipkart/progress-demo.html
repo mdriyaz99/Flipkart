@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Demo</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container-fluid">
+    <dl class="mt-4">
+        <dt>HTML Progress</dt>
+        <dd>
+            <progress min="1" max="100" value="25"></progress> 25%
+        </dd>
+        <dt>Bootstrap Progress</dt>
+        <dd>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning me-1" style="width: 25%;">
+                    Under Weight
+                </div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success me-1" style="width: 25%;">
+                    Normal Weight
+                </div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 50%;">
+                    OverWeight
+                </div>
+            </div>
+            <div class="bi bi-person-fill">
+                You
+            </div>
+        </dd>
+    </dl>
+</body>
+</html>

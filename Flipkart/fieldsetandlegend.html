@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fieldset and Legend</title>
+    <style>
+        dt{
+            background-color: black;
+            color: white;
+            font-family: arial;
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        dd{
+            padding: 5px;
+            background-color: gray;
+            color: white;
+            font-family: arial;
+            margin-bottom: 10px;
+        }
+        dl{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        fieldset{
+            margin: 40px;
+            box-shadow: 2px 2px 2px black;
+            border: 25px 25px 25px black;
+        }
+        legend{
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            font-family: arial;
+            font-size: 20px;
+            padding: 5px;
+            width: 140px;
+            box-shadow: 2px 2px 2px gray;
+            text-align: center;
+            font-weight: bold;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+   <fieldset>
+    <legend>Personal info</legend>
+    <dl>
+        <dt>First Name</dt>
+        <dd>Some Name</dd>
+        <dt>Last Name</dt>
+        <dd>Some Name</dd>
+        <dt>Father Name</dt>
+        <dd>Some Name</dd>
+       </dl>
+   </fieldset>
+   <fieldset>
+    <legend>Address info</legend>
+    <dl>
+        <dt>City</dt>
+        <dd>Some City</dd>
+        <dt>State</dt>
+        <dd>Some State</dd>
+        <dt>Street</dt>
+        <dd>Some Street</dd>
+       </dl>
+   </fieldset>
+</body>
+</html>

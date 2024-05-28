@@ -1,0 +1,127 @@
+<script>
+    function Factorial(n)
+    {
+        if(n===0){
+            return 1;
+        }
+        else {
+            return n * Factorial(n-1);
+        }
+    }
+    document.write(`Factorial of 5 is: ${Factorial(5)}`);
+</script>
+
+<!--
+
+<script>
+    var component = prompt("Enter Component Name", "Login|Register");
+    function Page(){
+        if(component==="login"){
+            return `
+                <div>
+                    <h2>User Login</h2>
+                    <dl>
+                        <dt>User Name</dt>
+                        <dd><input type="text"></dd>
+                        <dt>Password</dt>
+                        <dd><input type="password"></dd>
+                    </dl>
+                    <button>Login</button>
+                    </div>
+            `
+        } else {
+            return `
+                <div>
+                    <h2>Register</h2>
+                    <dl>
+                        <dt>Email</dt>
+                        <dd><input type="text"></dd>
+                    </dl>
+                    <button>Register</button>
+                    </div>
+            `
+        }
+    }
+    document.write(Page());
+</script>
+
+
+<script>
+    function Register(age){
+        age = parseInt(prompt("Enter Number"));
+        if(isNaN(age))
+        {
+            return "Age must be Number";
+        }
+        else
+        {
+            return `Your age : ${age}`;
+        }
+    }
+    document.write(Register());
+</script>
+
+
+<script>
+    function Hello(){
+        document.write("Statement-1<br>");
+        document.write("Statement-2<br>");
+        document.write("Statement-3<br>");
+        document.write("Statement-4<br>");
+        return
+        document.write("Statement-5<br>");
+    }
+    Hello();
+</script>
+
+
+<script>
+    function Hello(){
+        return function(){
+            document.write("<b>Welcome to JavaScript</b>");
+        }
+    }
+    Hello()();
+</script>
+
+
+<script>
+    function Hello()
+    {
+        return ["Delhi", "Hyd"];
+    }
+    Hello().map(function(item){
+        document.write(item + "<br>");
+    })
+</script>
+
+
+<script>
+    function Hello()
+    {
+        return "Welcome to Javascript"
+    }
+    document.write(Hello());
+</script>
+
+
+<script>
+    function Addition(a, b)
+    {
+        return a + b;
+    }
+    function Print(){
+        document.write("Addition=" + Addition(40, 50));
+    }
+    Print();
+</script>
+
+
+<script>
+    function Details(id, name, price)
+    {
+        document.write(`Id=${id}<br>Name=${name}<br>Price=${price}`);
+    }
+    Details(...[1, "TV", 45000.44]);
+</script>
+-->

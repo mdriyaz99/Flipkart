@@ -1,0 +1,62 @@
+<script>
+    //A rest parameter must be last in a parameter list.
+    function Details(title, ...product){
+        var [name, price, stock, rating] = product;
+        document.write(`<h2>${title}</h2>Name=${name}<br>Price=${price}<br>Stock=${stock}<br>Rating=${rating}`);
+    }
+
+    Details("Product Details", "TV", 45000.44, true, 4.3);
+</script>
+
+<!--
+
+<script>
+    //how to manage undefined parameters
+    //using too many parameters can lead to injection attack
+    function Details(name, price){
+        if(price){
+            document.write(`Name=${name}<br>Price=${price}`);
+        } else {
+            document.write(`Name=${name}<br><br>`);
+        }
+    }
+    Details("Samsung TV");
+    Details("LG TV", 45000.44);
+</script>
+
+
+<script>
+    function VerifyPassword(pwd, success, failure){
+        if(pwd==="admin"){
+            success();
+        } else {
+            failure();
+        }
+    }
+
+    VerifyPassword(prompt("Enter Password"), function(){document.write("Success..")}, function(){document.write("Invalid Password")});
+</script>
+
+
+<script>
+function printList(collection){
+    collection.map(function(item){
+        document.write(item + "<br>");
+    })
+}
+printList(["All","Electronics","Fashion"]);
+
+</script>
+
+
+<script>
+    //function parameters
+    function PrintNumbers(howMany){
+        for(var i=1; i<=howMany; i++){
+            document.write(i + "<br>");
+        }
+    }
+    PrintNumbers(5);
+    PrintNumbers(8);
+</script>
+-->

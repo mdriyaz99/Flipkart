@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa API</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            fetch("https://fakestoreapi.com/products")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                products.map(function(item){
+                    var div = document.createElement("div");
+                    div.className = "card p-2 m-2";
+                    div.style.width = "200px";
+                    div.innerHTML = `
+                        <a href="${item.image}" target="_blank"> <img src=${item.image} class="card-img-top" height="150"> </a>
+                        <div class="card-header" style="height:120px"> ${item.title} </div>
+                        <div class="card-body">
+                            <dl>
+                                <dt>Price </dt>
+                                <dd>${item.price}</dd>
+                                <dt>Rating</dt>
+                                <dd>${item.rating.rate}</dd>
+                            </dl>
+                        </div>
+                    `;
+                    document.querySelector("main").appendChild(div);
+                })
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid bg-success text-light" onload="bodyload()">
+    <h2>Shopping.</h2>
+    <main class="d-flex flex-wrap">
+
+    </main>
+</body>
+</html>

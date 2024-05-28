@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Classes 9</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+      section{
+        height: 600px;
+      }
+    </style>
+</head>
+<body class="container-fluid">
+    <section class="d-flex justify-content-center align-items-center">
+        <form class="border w-25 border-1 bg-danger text-white border-dark rounded rounded-2 p-4">
+            <h3 class="bi bi-person-fill">Register User</h3>
+            <div class="mb-4">
+                <label class="form-label" for="UserName">UserName</label>
+                <div>
+                    <input type="text" class="form-control" placeholder="Your Name" name="UserName">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="Password" class="form-label">Password</label>
+                <div>
+                    <input type="password" class="form-control" placeholder="Your Password" name="Password">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="City" class="form-label">Your City</label>
+                <div>
+                   <select class="form-select" name="City">
+                    <option>Select City</option>
+                    <option>Delhi</option>
+                    <option>Hyd</option>
+                   </select> 
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label for="Rating" class="form-label">Rating</label>
+                <div>
+                    <input type="range" class="form-range" value="2" min="1" max="5" name="Rating">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="form-switch">
+                    <input type="checkbox" class="form-check-input" checked> <label class="form-check-label">Subscribe</label>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-light w-100">Register</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

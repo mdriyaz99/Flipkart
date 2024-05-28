@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyEmail(){
+            var email = document.getElementById("Email").value;
+            var error = document.getElementById("error");
+            if(email.indexOf("@")<2){
+                error.innerHTML = "Invalid Email - Please include @ after 3 chars".fontcolor('red');
+            } else{
+                error.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Your Email</legend>
+        <input type="text" id="Email" onblur="VerifyEmail()">
+        <p id="error"></p>
+    </fieldset>
+</body>
+</html>
+
+<!--
+    if(email.indexOf("@")==-1){
+    error.innerHTML = "Invalid Email - Please include @".fontcolor('red');
+    } else{
+    error.innerHTML = "";
+    }
+-->

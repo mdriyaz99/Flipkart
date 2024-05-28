@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform2(Translate) </title>
+    <style>
+        .org{
+            opacity: 1;
+        }
+        .dup{
+            opacity: 0.2;
+        }
+        .dup{
+            transform: translate(-110px, 0px);
+        }
+        .dup:hover{
+            transform: translate(0px,0px);
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <img class="org" src="../public/images/women-fashion.jpg" width="100" height="100">
+    <img class="dup" src="../public/images/women-fashion.jpg" width="100" height="100">
+</body>
+</html>

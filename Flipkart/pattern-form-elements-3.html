@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Form Classes & Attributes</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        input:read-only{
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+        button:disabled{
+            cursor: not-allowed;
+        }
+        .password+div{
+            display: none;
+        }
+        .password:focus+div{
+            display: block;
+            color: goldenrod;
+        }
+        .terms:checked+label{
+            color: green;
+        }
+        .terms+label{
+            color: red;
+        }
+        .terms~button{
+            display: none;
+        }
+        .terms:checked~button{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" name="UserName" value="John"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" name="Password" class="password" placeholder="Uppercase 4 to 10" pattern="[A-Z]{4,10}">
+            <div class="bi bi-exclamation-triangle">Password 4 to 10 chars Uppercase Only</div>
+            </dd>
+            <dt>Age</dt>
+            <dd><input type="number" name="Age" value="22" readonly></dd>
+            <dt>Terms of Services</dt>
+            <dd>
+                <textarea cols="30" rows="10" disabled> Our Terms Of Services.</textarea>
+            </dd>
+            <dd>
+                <input type="checkbox" class="terms"> <label>I Accept</label>
+                <br><br>
+                <button >Submit</button>
+            </dd>
+            
+        </dl>
+    </form>
+</body>
+</html>

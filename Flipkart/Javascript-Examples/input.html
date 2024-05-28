@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Query String</title>
+    <script>
+        function bodyload(){
+            str = location.search;
+            document.querySelector("span").innerHTML = str.slice(str.indexOf("=")+1) ;
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p> Hello ! <span></span> </p>
+</body>
+</html>

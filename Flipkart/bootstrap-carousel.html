@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Carousel</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        form{
+            height: 250px;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="carousel slide" id="banners" data-bs-ride="carousel" data-bs-theme="dark">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="public/images/slide-1.jpg" height="250" class="w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
+                <img src="public/images/slide-2.jpg" height="250" class="w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <form class="d-flex justify-content-center align-items-center">
+                    <div class="input-group w-50">
+                        <input type="email" placeholder="Your email address to register" class="form-control">
+                        <button class="btn btn-danger"> Get Started <span class="bi bi-chevron-right"></span></button>
+                    </div>
+                </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="public/images/slide-3.jpg" height="250" class="w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#banners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#banners" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+            <button class="active" data-bs-slide-to="0" data-bs-target="#banners"></button>
+            <button data-bs-slide-to="1" data-bs-target="#banners"></button>
+            <button data-bs-slide-to="2" data-bs-target="#banners"></button>
+            <button data-bs-slide-to="3" data-bs-target="#banners"></button>
+        </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

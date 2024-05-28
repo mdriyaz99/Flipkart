@@ -1,0 +1,35 @@
+<script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          
+    .then(function(product){
+        document.write(`Total no of keys : ${Object.keys(product).length}`);
+    })
+</script>
+
+<!--
+    <script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          
+    .then(function(product){
+        for(var key in product){
+            document.write(`${key} : ${product[key]} <br>`);
+        }
+    })
+</script>
+
+<script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          //Object.keys method to fetch all keys
+    .then(function(product){
+        Object.keys(product).map(function(key){
+            document.write(product[key] + "<br>");
+        })
+    })
+</script>
+-->

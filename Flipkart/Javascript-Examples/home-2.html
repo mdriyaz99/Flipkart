@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer By Name</title>
+    <script type="text/javascript">
+        "use strict";
+        function bodyload()
+        {
+           pic.src="../public/images/women-fashion.jpg"
+           frmRegister.btnRegister.value="Register"
+           frmLogin.btnLogin.value="Login"
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" name="pic" height="100" border="1">
+    </div>
+    <div>
+        <form name="frmRegister">
+            <h2>Register</h2>
+            User Name : <input name="txtName" type="text"> <input name="btnRegister" type="button">
+        </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h2>Login</h2>
+            Mobile : <input name="txtMobile" type="text"> <input name="btnLogin" type="button">
+        </form>
+    </div>
+</body>
+</html>

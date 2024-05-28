@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    
+    <script>
+       function CheckBoxChange(){
+        var optRequired = document.getElementById("optRequired");
+        var UserName = document.getElementById("UserName");
+        UserName.required = (optRequired.checked)?true:false;
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    <form>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" name="UserName" id="UserName"> <button>Submit</button>
+            </dd>
+            <dd> <input type="checkbox" onchange="CheckBoxChange()" id="optRequired"> Name Required </dd>
+        </dl>
+    </form>
+</body>
+</html>

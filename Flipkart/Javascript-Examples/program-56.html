@@ -1,0 +1,47 @@
+<script>
+    var FetchData = new Promise(function(resolve, reject){
+        var url = prompt("Enter URL");
+        if(url==="http://fakestoreapi.com")
+        {
+            resolve("Data Fetched Successfully..<br>");
+        }
+        else {
+            reject("Unable to connect to resource<br>");
+        }
+    })
+    FetchData
+    .then(function(response){
+        document.write(response);
+    })
+    .catch(function(response){
+        document.write(response)
+    })
+    .finally(function(){
+        document.write("Program End");
+    })
+</script>
+
+<!--
+
+<script>
+    function VerifyPassword(password, success, failure)
+    {
+        if(password==="admin")
+        {
+            success("Login Success");
+        } else {
+            failure("Invalid Password");
+        }
+    }
+    VerifyPassword(
+        prompt("Enter Password"),
+        function(res) {
+            document.write(res);
+        },
+        function(res) {
+            document.write(res);
+        }
+    )
+</script>
+
+-->

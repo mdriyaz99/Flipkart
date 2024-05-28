@@ -1,0 +1,23 @@
+<!--Removing item(s) from Array-->
+
+<script>
+    var cities = ["Delhi", "Hyd","Chennai", "Bangalore"];
+    cities.splice(2,2);
+    cities.map(function(city){
+        document.write(`<b><li> ${city} </li></b>`);
+    });
+</script>
+
+<!--
+    var cities = ["Delhi", "Hyd","Chennai", "Bangalore"];
+    cities.pop();
+    cities.map(function(city){
+        document.write(`<b><li> ${city} </li></b>`);
+    });
+
+    var cities = ["Delhi", "Hyd","Chennai", "Bangalore"];
+    cities.shift();
+    cities.map(function(city){
+        document.write(`<b><li> ${city} </li></b>`);
+    });
+-->

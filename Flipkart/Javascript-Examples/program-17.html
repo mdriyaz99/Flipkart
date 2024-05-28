@@ -1,0 +1,12 @@
+<script>
+    var str = prompt("Enter String");
+    var firstChar = str.charAt(0).toUpperCase();
+    var restChars = str.substring(1).toLowerCase();
+    var sentence = firstChar + restChars;
+    document.write(sentence);
+</script>
+
+<!--
+    var str = prompt("Enter String");
+    document.write(str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+-->

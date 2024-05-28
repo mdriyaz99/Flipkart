@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motel Booking Form</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .nav-tabs .nav-item .nav-link {
+            color: #212529;
+        }
+        .nav-tabs .nav-item .nav-link.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .modal-header {
+            background-color: #dc3545;
+            color: #fff;
+            border-bottom: none;
+        }
+        .modal-footer {
+            border-top: none;
+        }
+    </style>
+
+
+<script>
+    function bookingclick() {
+        var name = document.getElementById("txtname").value;
+        var date = document.getElementById("txtdate").value;
+        var days = document.getElementById("txtdays").value;
+        var persons = document.getElementById("txtpersons").value;
+        var advance = document.getElementById("Advance").value;
+
+        var roomType = "";
+        var roomCost = 0;
+
+        var deluxeRoom = document.getElementById("deluxroom");
+        var suiteRoom = document.getElementById("suiteroom");
+        var acRoom = document.getElementById("Acroom");
+        var lockerRoom = document.getElementById("lockerroom");
+
+        if (deluxeRoom.checked) {
+            roomType = "Deluxe Room";
+            roomCost = persons <= 3 ? 5000 : 7000;
+        } else if (suiteRoom.checked) {
+            roomType = "Suite Room";
+            roomCost = persons <= 3 ? 7000 : 9000;
+        }
+
+        if (acRoom.checked) {
+            roomType += " with AC";
+            roomCost += 2000;
+        }
+
+        if (lockerRoom.checked) {
+            roomType += " with Locker";
+            roomCost += 1000;
+        }
+
+        roomCost *= days;
+        var remaining = roomCost - advance;
+
+        document.getElementById("lblName").innerText = name;
+        document.getElementById("lbldate").innerText = date;
+        document.getElementById("lbldays").innerText = days;
+        document.getElementById("lblpersons").innerText = persons;
+        document.getElementById("lblRoomType").innerText = roomType;
+        document.getElementById("lblTotal").innerText = roomCost;
+        document.getElementById("lblAdvance").innerText = advance;
+        document.getElementById("lblremaining").innerText = remaining;
+    }
+</script>
+
+
+</head>
+<body class="container-fluid">
+   <ul class="nav nav-tabs bg-light">
+       <li class="nav-item"><a href="#customerinfo" data-toggle="tab" class="nav-link active">Customer Details</a></li>
+       <li class="nav-item"><a href="#roomtype" data-toggle="tab" class="nav-link">Select Room Type</a></li>
+       <li class="nav-item"><a href="#Amenities" data-toggle="tab" class="nav-link">Select Amenities</a></li>
+       <li class="nav-item"><a href="#Advanceamount" data-toggle="tab" class="nav-link">Advance Amount</a></li>
+       <li class="nav-item"><a href="#register" data-toggle="tab" class="nav-link">Register</a></li>
+   </ul>
+   <h2 class="text-center mt-4 mb-4">Motel Booking Form</h2>
+
+   <div class="tab-content">
+    <div class="tab-pane border rounded p-4 active" id="customerinfo">
+        <form>
+            <div class="form-group">
+                <label class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="txtname">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Check-in Date</label>
+                <input type="date" class="form-control" id="txtdate">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Total Number of Days</label>
+                <input type="number" class="form-control" id="txtdays">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Total Number of Persons</label>
+                <input type="number" class="form-control" id="txtpersons" max="5">
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane border rounded p-4" id="roomtype">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="../public/images/deluxe-room.jpg" class="img-fluid rounded mb-3">
+                <label class="form-label fw-bold text-center d-block">Deluxe Room</label>
+                <input type="radio" class="form-check-input d-block mx-auto" id="deluxroom" name="rooms">
+            </div>
+            <div class="col-sm-6">
+                <img src="../public/images/suite-room.jpg" class="img-fluid rounded mb-3">
+                <label class="form-label fw-bold text-center d-block">Suite Room</label>
+                <input type="radio" class="form-check-input d-block mx-auto" id="suiteroom" name="rooms">
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane border rounded p-4" id="Amenities">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="../public/images/ac-room.jpg" class="img-fluid rounded mb-3">
+                <label class="form-label fw-bold text-center d-block">AC Room</label>
+                <input type="checkbox" class="form-check-input d-block mx-auto" id="Acroom" name="rooms">
+            </div>
+            <div class="col-sm-6">
+                <img src="../public/images/locker.jpg" class="img-fluid rounded mb-3">
+                <label class="form-label fw-bold text-center d-block">Locker Room</label>
+                <input type="checkbox" class="form-check-input d-block mx-auto" id="lockerroom" name="rooms">
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane border rounded p-4" id="Advanceamount">
+        <form>
+            <div class="form-group">
+                <label class="form-label">Advance Amount</label>
+                <input type="number" class="form-control" id="Advance" max="5">
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane" id="register">
+        <p class="text-center text-danger mb-4" style="font-size: 24px; font-weight: bold;">Booking Register</p>
+        <button onclick="bookingclick()" class="btn btn-success btn-block" data-toggle="modal" data-target="#summary">Register</button>
+
+        <div class="modal fade" id="summary">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Booking Summary</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <dl>
+                            <dt>Customer Name</dt>
+                            <dd id="lblName"></dd>
+                            <dt>Check-in Date</dt>
+                            <dd id="lbldate"></dd>
+                            <dt>Total Number of Days</dt>
+                            <dd id="lbldays"></dd>
+                            <dt>Total Number of Persons</dt>
+                            <dd id="lblpersons"></dd>
+                            <dt>Room Type</dt>
+                            <dd id="lblRoomType"></dd>
+                            <dt>Total Cost</dt>
+                            <dd id="lblTotal" class="text-danger fw-bold"></dd>
+                            <dt>Advance Amount</dt>
+                            <dd id="lblAdvance" class="text-danger fw-bold"></dd>
+                            <dt>Remaining Amount</dt>
+                            <dd id="lblremaining" class="text-danger fw-bold"></dd>
+                        </dl>
+                    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    
+    <script>
+       function CheckBoxChange(){
+       var optYes = document.getElementById("optYes");
+       var lstCities = document.getElementById("lstCities");
+       if(optYes.checked)
+       {
+        lstCities.value = "Hyd";
+       } else{
+        lstCities.value = "-1";
+       }
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl>
+        <dt>Are you from Hyderabad</dt>
+        <dd><input type="checkbox" onchange="CheckBoxChange()" id="optYes"> Yes </dd>
+        <dt>City</dt>
+        <dd>
+            <select id="lstCities">
+                <option value="-1">Select City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Hyd">Hyd</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+        </dd>
+    </dl>
+</body>
+</html>
+
+<!--
+    onchange="CheckBoxChange()"
+-->

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulations</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var cities = ["Delhi", "Hyd"];
+
+        function LoadCities(){
+            document.getElementById("lstCities").innerHTML = "";
+            cities.map(function(city){
+                var option = document.createElement("option");
+                option.text = city;
+                document.getElementById("lstCities").appendChild(option);
+            });
+            document.getElementById("lblCount").innerHTML = `Total No of Cities = ${cities.length}`;
+        }
+
+        function AddClick(){
+            var city = document.getElementById("txtCity").value;
+            if(cities.indexOf(city)==-1){
+                cities.push(city);
+                LoadCities();
+                document.getElementById("txtCity").value = " ";
+            } else {
+                alert(`${city} Already Exists`);
+            }
+        }
+
+        function SortAsc(){
+            cities.sort();
+            LoadCities();
+        }
+        function SortDsc(){
+            cities.sort();
+            cities.reverse();
+            LoadCities();
+        }
+
+        function RemoveClick(){
+            var selectedCity = document.getElementById("lstCities").value;
+            var cityIndex = cities.indexOf(selectedCity);
+            var flag = confirm(`Are you sure\nDo you want to delete ${selectedCity}?`)
+            if(flag==true){
+                cities.splice(cityIndex,1);
+                LoadCities();
+            }
+        }
+        function ClearClick(){
+            cities.length = 0;
+            LoadCities();
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="LoadCities()">
+    <div class="mt-4 w-25">
+        <div class="mt-2 input-group">
+            <input type="text" id="txtCity" class="form-control" placeholder="New City">
+            <button class="btn btn-primary" onclick="AddClick()">Add</button>
+        </div>
+        <div class="mt-3">
+            <button onclick="SortAsc()" class="bi bi-sort-alpha-down btn btn-success"></button>
+            <button onclick="SortDsc()" class="bi bi-sort-alpha-up ms-2 btn btn-success"></button>
+        </div>
+        <div class="mt-3">
+            <select size="3" class="form-select" id="lstCities">
+
+            </select>
+            <div class="mt-2 mb-2">
+                <label id="lblCount"></label>
+            </div>
+            <div class="mt-2">
+                <button onclick="RemoveClick()" class="btn btn-danger bi bi-trash"> Remove </button>
+                <button onclick="ClearClick()" class="btn btn-warning bi bi-trash-fill">Clear All</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

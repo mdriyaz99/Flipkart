@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements 2</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        meter{
+            width: 150px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Ratings & Reviews</legend>
+            <div>
+                5 <span class="bi bi-star-fill"></span> <meter min="1" max="100" value="100" low="0" high="0"></meter> 1566
+            </div>
+            <div>
+                4 <span class="bi bi-star-fill"></span> <meter min="1" max="100" value="20" low="0" high="0"></meter> 232
+            </div>
+            <div>
+                3 <span class="bi bi-star-fill"></span> <meter min="1" max="100" value="5" low="0" high="0"></meter> 48
+            </div>
+            <div>
+                2 <span class="bi bi-star-fill"></span> <meter min="1" max="100" value="3" low="40" high="80"></meter> 23
+            </div>
+            <div>
+                1 <span class="bi bi-star-fill"></span> <meter min="1" max="100" value="7" low="30" high="50"></meter> 79
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Downloading</legend>
+            <dl>
+                <dt>Preparing For Download</dt>
+                <dd> <progress></progress></dd>
+                <dt>30% Completed</dt>
+                <dd> <progress min="1" max="100" value="30"></progress></dd>
+                <dt>99% Completed</dt>
+                <dd> <progress min="1" max="100" value="99"></progress></dd>
+                <dt>Download Completed</dt>
+                <dd> <progress min="1" max="100" value="100"></progress> </dd>
+            </dl>
+        </fieldset>
+        <fieldset>
+            <legend>Edit User</legend>
+            <dl>
+                <dt> <input type="hidden" name="UserID" value="John_NIT"></dt>
+                <dt>Name</dt>
+                <dd> <input type="text" name="Name" value="John"></dd>
+                <dt>Age</dt>
+                <dd> <input type="number" name="Age" value="22"></dd>
+            </dl>
+            <br>
+            <button type="submit" class="bi bi-person-fill">  Submit</button> <input type="submit" value="Register">
+            <input type="reset" value="Cancel"> <button type="reset"><img src="public/images/a1.jpg" width="30" height="30"> Reset</button>
+            <button type="button" class="bi bi-printer" onclick="window.print()">Print</button>
+        </fieldset>
+    </form>
+</body>
+</html>

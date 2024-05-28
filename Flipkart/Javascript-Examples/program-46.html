@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var pos = 0;
+        function MoveClick(){
+            document.querySelector("img").style.marginLeft = (pos+=50) + 'px';
+        }
+    </script>
+</head>
+<body onclick="MoveClick()">
+    <button>Move > </button>
+    <br><br>
+    <img src="../public/images/afternoon.gif" width="100" height="100">
+</body>
+</html>

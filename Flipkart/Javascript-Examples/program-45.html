@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            width: 200px;
+        }
+    </style>
+    <script>
+        var categories = ["Select a Category", "Electronics", "Footwear"];
+        var electronics = ["Select Electronic Products", "Television", "Mobiles", "Watches"];
+        var footwear = ["Select Footwear Products", "Casuals", "Boots"];
+        var products = [];
+
+        function LoadProducts(){
+            document.getElementById("lstProducts").innerHTML = "";
+            products.map(function(product){
+                var option = document.createElement("option");
+                option.text = product;
+                option.value = product;
+                document.getElementById("lstProducts").appendChild(option);
+            })
+        }
+
+
+
+        function LoadCategories(){
+            document.getElementById("lstCategories").innerHTML = "";
+            categories.map(function(category){
+                var option = document.createElement("option");
+                option.text = category;
+                option.value = category;
+                document.getElementById("lstCategories").appendChild(option);
+            })
+        }
+
+        function CategoryChanged(){
+            var categoryName = document.getElementById("lstCategories").value;
+            switch(categoryName)
+            {
+                case "Electronics":
+                    products = [...electronics];
+                    LoadProducts();
+                    break;
+                case "Footwear":
+                    products = [...footwear];
+                    LoadProducts();
+                    break;
+                default:
+                    products = ["Please Select a Category"];
+                    LoadProducts();
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body onload="LoadCategories()">
+    <h2>Cascading Dropdown</h2>
+    <dl>
+        <dt>Select a Product Category</dt>
+        <dd>
+            <select id="lstCategories" onchange="CategoryChanged()">
+                
+            </select>
+        </dd>
+        <dt>Select a Product</dt>
+        <dd>
+            <select id="lstProducts">
+
+            </select>
+        </dd>
+    </dl>
+</body>
+</html>

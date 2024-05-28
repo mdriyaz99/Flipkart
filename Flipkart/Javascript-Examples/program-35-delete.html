@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            fetch("../data/products.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                products.map(function(product){
+
+                    var div = document.createElement("div");
+                    div.className = "card p-2 m-2";
+                    div.innerHTML = `
+                        <img class="card-img-top" src=${product.Image} height="170">
+                        <div class="card-header">
+                            <p class="h5"> ${product.Name} </p>
+                        </div>
+                        <div class="card-body">
+                            <p> ${product.Price} </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-warning w-100 bi bi-cart4"> Add to Cart </button>
+                        </div>
+                    `;
+
+                    document.querySelector("main").appendChild(div);
+
+                })
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload">
+    <main class="d-flex flex-wrap mt-2">
+
+    </main>
+</body>
+</html>

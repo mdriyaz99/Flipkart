@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ColorChange(){
+            var color = document.getElementById("txtColor").value;
+            document.querySelector("p").innerHTML = "Sample Text".fontcolor(color);
+        }
+        function makeBold() {
+            var text = document.querySelector("p");
+            text.style.fontWeight = (text.style.fontWeight === 'bold') ? 'normal' : 'bold';
+            
+        }
+
+        function alignCenter() {
+            var text = document.querySelector("p");
+            text.style.textAlign = "center";
+        }
+
+        function changeFontSize() {
+            var size = document.getElementById("fontSize").value;
+            document.querySelector("p").style.fontSize = size + 'px';
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div>
+        <button class="bi bi-type-bold" onclick="makeBold()"></button>
+        <button class="bi bi-text-center" onclick="alignCenter()"></button>
+        font <input type="number" min="1" id="fontSize" max="7" value="1" onchange="changeFontSize()"> size
+        <input type="color" id="txtColor" onchange="ColorChange()">
+    </div>
+    <div class="container">
+        <p id="lblTxt">Sample Text</p>
+    </div>
+</body>
+</html>

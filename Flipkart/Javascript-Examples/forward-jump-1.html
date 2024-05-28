@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var maleRadio = document.getElementById("optMale");
+            var femaleRadio = document.getElementById("optFemale");
+
+            if(maleRadio.checked){
+                document.querySelector("p").innerHTML = `Gender is ${maleRadio.value}`;
+
+            }
+
+            if(femaleRadio.checked){
+                document.querySelector("p").innerHTML = `Gender is ${femaleRadio.value}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" id="optMale" name="Gender" value="Male"> Male
+        <input type="radio" id="optFemale" name="Gender" value="Female"> Female
+        <br><br>
+        <button onclick="SubmitClick()">Submit</button>
+    </fieldset>
+    <p></p>
+</body>
+</html>

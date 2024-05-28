@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Layout</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        nav{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-family: arial;
+            font-size: 20px;
+        }
+        .bi-justify{
+            font-size: 20px;
+        }
+        .brand{
+            font-weight: bold;
+            font-size: 24px;
+        }
+        @media screen and (orientation:landscape) {
+            nav{
+                display: flex;
+                justify-content: space-between;
+            }
+            .menu span{
+                margin-right: 25px;
+            }
+            .toggle{
+                display: none;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            nav{
+                display: flex;
+                justify-content: space-between;
+            }
+            .menu{
+                display: none;
+            }
+            .toggle{
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">Shopper.</div>
+        <div class="menu">
+            <span>Home</span>
+            <span>Shop</span>
+            <span>Blog</span>
+            <span>Pages</span>
+            <span>Docs</span>
+        </div>
+        <div class="toggle">
+            <button class="bi bi-justify"></button>
+        </div>
+    </nav>
+</body>
+</html>

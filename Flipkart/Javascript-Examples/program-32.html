@@ -1,0 +1,53 @@
+<script>
+    var product = {
+        Name : "TV",
+        Price : 40000.44
+       // Rating : 4.2
+    }
+   document.write(typeof product["Name"] + "<br>");
+   document.write(typeof product["Price"])
+</script>
+
+<!--
+<script>
+    var product = {
+        Name : "TV",
+        Price : 40000.44
+       // Rating : 4.2
+    }
+    if("Rating" in product){
+        document.write(`Name=${product.Name}<br>Price=${product.Price}<br>Raring=${product.Rating}`);
+    } else {
+        document.write(`Name=${product.Name}<br>Price=${product.Price}<br>Raring=N/A`);
+    }
+</script>
+
+<script>
+    fetch("../data/product.json")
+    .then(function(response){
+        return response.json();
+    })                          
+    .then(function(product){
+        document.write("rating" in product)
+    })
+</script>
+
+    .then(function(product){
+        document.write("Stock" in product)
+    })
+
+        *How to delete a key in the object*
+    <script>
+    var product = {
+        Name : "TV",
+        Price : 40000.44,
+        Rating : 4.2
+    }
+    delete product.Rating;
+   if(product.Rating){
+    document.write(`Name=${product.Name}<br>Price=${product.Price}<br>Rating=${product.Rating}`);
+   } else {
+    document.write(`Name=${product.Name}<br>Price=${product.Price}`);
+   }
+</script>
+-->

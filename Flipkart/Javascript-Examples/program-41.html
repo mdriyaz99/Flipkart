@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        progress{
+            width: 300px;
+            height: 30px;
+        }
+        @keyframes FadeIn
+        {
+            from {
+                opacity: 0;
+                transform: rotate(0deg);
+                width: 5px;
+                height: 5px;
+            }
+            to {
+                opacity: 1;
+                transform: rotate(360deg);
+                width: 300px;
+                height: 400px;
+            }
+        }
+    </style>
+    <script>
+        var count = 1;
+        function ShowProgress(){
+            var img = document.querySelector("img");
+            count++;    // count = count + 1;
+            document.getElementById("progress").value = count;
+            document.getElementById("lblStatus").innerHTML = `${count}% Completed`;
+            if(count==100){
+                document.getElementById("loadingContainer").style.display = "none";
+                document.getElementById("imageContainer").style.display = "block";
+            }
+            img.style.animationName = "FadeIn";
+            img.style.animationDuration = "4s";
+        }
+        var timer;
+        function LoadClick(){
+            document.getElementById("btnContainer").style.display = "none";
+            document.getElementById("loadingContainer").style.display = "block";
+            timer = setInterval(ShowProgress, 1);
+        }
+        function PauseClick(){
+            clearInterval(timer);
+            document.getElementById("lblStatus").innerHTML = `${count}% Completed <br> [Paused]`;
+        }
+        function PlayClick(){
+            timer = setInterval(ShowProgress, 100);
+            document.getElementById("lblStatus").innerHTML = `${count}% Completed`;
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex text-center justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <div id="btnContainer">
+            <button class="btn btn-primary" onclick="LoadClick()"> Load Image </button>
+        </div>
+        <div id="loadingContainer" style="display: none;">
+            <progress min="1" max="100" id="progress"></progress>
+            <p>
+                <button onclick="PlayClick()" class="btn btn-success bi bi-play"></button>
+                <button onclick="PauseClick()" class="btn btn-warning bi bi-pause"></button>
+            </p>
+            <p id="lblStatus" class="fw-bold"></p>
+        </div>
+        <div id="imageContainer" style="display: none;">
+            <img src="../public/images/women-fashion.jpg" height="400" width="300">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+    fetch("https://fakestoreapi.com/products")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(products){
+        var result = products.filter(function(product){
+            return product.rating.rate < 4
+        });
+        result.map(function(item){
+            document.write(`<li>${item.title} <b> ${item.rating.rate} </b> </li>`);
+        })
+    })
+</script>

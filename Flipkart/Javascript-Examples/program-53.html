@@ -1,0 +1,63 @@
+
+<script>
+    //function closure
+    function Outer()
+    {
+        var x = 10;
+        function Inner(){
+            var y = 40;
+            var z = x + y;
+            document.write(`Z=${z}`);
+        }
+        Inner();
+    }
+    Outer();
+</script>
+
+
+<!--
+
+<script>
+    //Anonymous Function
+    (function(){
+        document.write("Anonymous Function");
+    })();
+</script>
+
+
+<script>
+    var password = prompt("Enter Password");
+    var result;
+    if(password==="admin"){
+        result = function(){
+            document.write("Success..");
+        }
+    } else {
+        result = function(){
+            document.write("Invalid Password..");
+        }
+    }
+    result();
+</script>
+
+<script>
+    //function expression
+    let PrintNumbers = function(){
+        for(var i=1; i<=5; i++){
+            document.write(i + "<br>");
+        }
+    }
+    PrintNumbers();
+</script>
+
+
+<script>
+    //funtion declaration
+    function PrintNumbers(){
+        for(var i=1; i<=10; i++){
+            document.write(i + "<br>");
+        }
+    }
+    PrintNumbers();
+</script>
+-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulations</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+       var appointments = [];
+
+       function LoadAppointments(){
+        document.querySelector("main").innerHTML = "";
+        appointments.map(function(task){
+            var div = document.createElement("div");
+            div.className = "alert alert-dismissible alert-success"
+            div.innerHTML = `
+                <h3> ${task} </h3>
+                <button class="btn btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.querySelector("main").appendChild(div);
+        })
+       }
+       function AddClick(){
+        var task = document.getElementById("txtTask").value;
+        appointments.push(task);
+        LoadAppointments();
+       }
+    </script>
+</head>
+<body class="container-fluid">
+   <h1 class="text-center text-primary">TO-DO</h1>
+   <p class="text-center text-secondary">(Your Appointments)</p>
+   <div class="mt-4">
+    <button data-bs-target="#addTask" data-bs-toggle="modal" class="bi bi-calendar-event btn btn-warning"> Add Appointment</button>
+    <div id="addTask" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add New Appointment</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="txtTask" placeholder="Appointment Title">
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" onclick="AddClick()" class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <main class="mt-4">
+
+   </main>
+
+   <script src="../node_modules/jquery/dist/jquery.js"></script>
+   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

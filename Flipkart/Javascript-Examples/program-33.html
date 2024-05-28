@@ -1,0 +1,40 @@
+<script>
+    var UserId = Symbol()
+    var User = {
+        [UserId]: "john_nit123",
+        Name: "John",
+        Age: 22,
+        Course: "Web UI"
+    }
+    Object.keys(User).map(function(key){
+        document.write(key + "<br>");
+    })
+    document.write("UserId : " + User[UserId])
+</script>
+
+
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h3>Edit Details</h3>
+        <dl>
+            <dt>
+                <input type="hidden" name="UserId" value="John_nit123">
+            </dt>
+            <dt>Name</dt>
+            <dd><input type="text" name="Name"></dd>
+            <dt>Age</dt>
+            <dd><input type="text" name="Age"></dd>
+        </dl>
+        <button>Save</button>
+    </form>
+</body>
+</html>
+
